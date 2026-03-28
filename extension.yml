@@ -1,0 +1,37 @@
+schema_version: "1.0"
+
+extension:
+  id: "lessons-learned"
+  name: "Lessons Learned"
+  version: "0.0.1"
+  description: "Collect PR feedback, extract insights, and adds lessons learned to project memory. That feedback is then usedto guide future development."
+  author: "@buddhisthead"
+  repository: "https://github.com/ropponme/lessons-learned"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=0.3.0"            # Minimum spec-kit version
+  tools:                                # Optional: External tools required
+    - name: "gh"
+      required: true
+      version: ">=2.0.0"
+    - name: "jq"
+      required: true
+      version: ">=1.6.0"
+  commands:                             # Optional: Core commands needed
+    - "speckit.specify"
+    - "speckit.plan"
+    - "speckit.implement"
+
+provides:
+  commands:
+    - name: "speckit.lessons-learned.feedback"      # Must follow pattern: speckit.{ext-id}.{cmd}
+      file: "extension/commands/feedback.md"
+      description: "Collect PR feedback, extract insights, and adds lessons learned to project memory."
+      aliases: ["speckit.feedback"]
+
+tags:
+  - "feedback"
+  - "lessons learned"
+  - "project memory"
+  - "pr reviews"

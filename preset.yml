@@ -1,0 +1,48 @@
+schema_version: "1.0"
+
+preset:
+  id: "lessons-learned"
+  name: "Lessons Learned"
+  version: "0.0.1"
+  # CUSTOMIZE: Brief description (under 200 characters)
+  description: "The Lessons Learned presets integrates the Lessons Learned extension into core Spec Kit commands (e.g. specify/plan/implement)."
+  author: "@buddhisthead"
+  repository: "https://github.com/ropponme/lessons-learned"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=0.3.0"
+
+# Templates provided by this preset
+provides:
+  templates:
+
+    # Command overrides (AI agent workflow prompts)
+    # Presets can override both core and extension commands.
+    # Commands are automatically registered into all detected agent
+    # directories (.claude/commands/, .gemini/commands/, etc.)
+
+    # Override a core command:
+    - type: "command"
+      name: "speckit.specify"
+      file: "preset/templates/commands/specify.md"
+      description: "Specify features with integrated lessons learned from PR feedback."
+      replaces: "speckit.specify"
+
+    - type: "command"
+      name: "speckit.plan"
+      file: "preset/templates/commands/plan.md"
+      description: "Create the technical plan, using lessons learned."
+      replaces: "speckit.plan"
+
+    - type: "command"
+      name: "speckit.implement"
+      file: "preset/templates/commands/implement.md"
+      description: "Implement tasks, using lessons learned."
+      replaces: "speckit.implement"
+
+tags:
+  - "feedback"
+  - "lessons learned"
+  - "project memory"
+  - "pr reviews"
