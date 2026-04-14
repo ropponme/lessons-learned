@@ -47,7 +47,7 @@ PRESET_URL="https://github.com/${REPO}/releases/download/${VERSION}/lessons-lear
 
 # Install extension
 echo "1️⃣  Installing extension..."
-if specify extension add --from "$EXTENSION_URL"; then
+if specify extension add lessons-learned-extension --from "$EXTENSION_URL"; then
     echo "   ✅ Extension installed successfully"
 else
     echo "   ❌ Extension installation failed"
@@ -58,7 +58,7 @@ echo ""
 
 # Install preset
 echo "2️⃣  Installing preset..."
-if specify preset add --from "$PRESET_URL"; then
+if specify preset add lessons-learned-preset --from "$PRESET_URL"; then
     echo "   ✅ Preset installed successfully"
 else
     echo "   ❌ Preset installation failed"
