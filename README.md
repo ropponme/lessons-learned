@@ -1,19 +1,63 @@
 # Lessons Learned
 
-This repository provides a Spec Kit [extension](https://github.com/github/spec-kit/blob/main/extensions/README.md) and [preset](https://github.com/github/spec-kit/blob/main/presets/README.md) which can be used together to enable "lessons learned" to be incorporated into your spec-driven development workflow. 
+A Spec Kit [extension](https://github.com/github/spec-kit/blob/main/extensions/README.md) and [preset](https://github.com/github/spec-kit/blob/main/presets/README.md) that enables "lessons learned" to be incorporated into your spec-driven development workflow.
 
-The extension adds a new command (`specify.feedback`) to the end of the feature workflow, which collects PR feedback and adds it to the project memory.
+## What It Does
 
-The preset customizes the built-in Spec Kit commands (specify, plan, implement) to incorporate that feedback for new features.
+**Extension**: Adds the `/speckit.feedback` command to collect PR review comments and discussions, extracting actionable insights and storing them in your project memory.
 
-# Installation
+**Preset**: Customizes core Spec Kit commands (`specify`, `plan`, `implement`) to automatically reference and apply lessons learned from past PRs.
 
-An installable package isn't available yet, but the extension can be installed in development mode.
+## Installation
 
-1. Clone this repository to your machine.
-2. `cd` into the repository where you have previously installed spec kit via `specify init ...`
-3. Install the extension: `specify extension add --dev /path/to/this/repository`
-4. Install the preset: `specify preset add --dev /path/to/this/repository`
+### Quick Install (Recommended)
+
+Install both the extension and preset using the install script:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ropponme/lessons-learned/main/install.sh | bash
+```
+
+Or specify a version:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ropponme/lessons-learned/v1.0.0/install.sh | bash -s v1.0.0
+```
+
+### Manual Installation
+
+Install from GitHub releases:
+
+```bash
+# Install extension
+specify extension add --from https://github.com/ropponme/lessons-learned/releases/download/v1.0.0/lessons-learned-extension-1.0.0.zip
+
+# Install preset
+specify preset add --from https://github.com/ropponme/lessons-learned/releases/download/v1.0.0/lessons-learned-preset-1.0.0.zip
+```
+
+### Development Installation
+
+For local development:
+
+```bash
+# Clone this repository
+git clone https://github.com/ropponme/lessons-learned.git
+cd lessons-learned
+
+# In your spec-kit project directory
+specify extension add --dev /path/to/lessons-learned
+specify preset add --dev /path/to/lessons-learned
+```
+
+## Verify Installation
+
+Check that both components are installed:
+
+```bash
+specify extension list | grep -i "lessons"
+specify preset list | grep -i "lessons"
+```
 
 # Usage
 
