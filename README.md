@@ -21,7 +21,7 @@ curl -fsSL https://raw.githubusercontent.com/ropponme/lessons-learned/main/insta
 Or specify a version:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ropponme/lessons-learned/v1.0.0/install.sh | bash -s v1.0.0
+curl -fsSL https://raw.githubusercontent.com/ropponme/lessons-learned/main/install.sh | bash -s v1.0.0
 ```
 
 ### Manual Installation
@@ -30,10 +30,10 @@ Install from GitHub releases:
 
 ```bash
 # Install extension
-specify extension add --from https://github.com/ropponme/lessons-learned/releases/download/v1.0.0/lessons-learned-extension-1.0.0.zip
+specify extension add lessons-learned-extension --from https://github.com/ropponme/lessons-learned/releases/download/v1.0.0/lessons-learned-extension-1.0.0.zip
 
 # Install preset
-specify preset add --from https://github.com/ropponme/lessons-learned/releases/download/v1.0.0/lessons-learned-preset-1.0.0.zip
+specify preset add lessons-learned-preset --from https://github.com/ropponme/lessons-learned/releases/download/v1.0.0/lessons-learned-preset-1.0.0.zip
 ```
 
 ### Development Installation
